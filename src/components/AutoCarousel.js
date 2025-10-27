@@ -1,49 +1,49 @@
-// components/AutoCarousel.js
-'use client'
+"use client";
 
-import Image from "next/image";
+
 import { useEffect, useState } from "react";
 
-const images = ["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"];
-
 export default function AutoCarousel() {
-    const [index, setIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-    const nextSlide = () => setIndex((prev) => (prev + 1) % images.length);
-    const prevSlide = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
+  // 🖼️ Aquí defines las imágenes del carrusel
+  const slides = ["/Logo.png", "/Single.png"];
 
-    useEffect(() => {
-        const timer = setInterval(() => nextSlide(), 4000); // Cambia cada 4 segundos
-        return () => clearInterval(timer);
-    }, []);
+  // 🔁 Efecto automático de cambio de imagen
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000); // Cambia cada 5 segundos
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
-    return (
-        <div className="relative w-full h-64 overflow-hidden rounded-xl">
-            {images.map((src, i) => (
-                <img
-                    key={i}
-                    src={src}
-                    alt={`Slide ${i + 1}`}
-                    className={`absolute top-0 left-0 w-full h-full object-cover object-bottom transition-opacity duration-700 ease-in-out ${i === index ? "opacity-100" : "opacity-0"
-                        }`}
-                />
-            ))}
+  return (
+   <div className="relative w-full h-[100px] sm:h-[500px] bg-black flex items-center justify-center m-0 p-0 overflow-hidden">
 
-            {/* Botones de navegación */}
-            <button
-                type="button"
-                onClick={prevSlide}
-                className="absolute left-2 top-1/2 transform -translate-y-1/4 btn btn-circle bg-black bg-opacity-30 text-white border-none hover:bg-opacity-50"
-            >
-                ❮
-            </button>
-            <button
-                type="button"
-                onClick={nextSlide}
-                className="absolute right-2 top-1/2 transform -translate-y-1/4 btn btn-circle bg-black bg-opacity-30 text-white border-none hover:bg-opacity-50"
-            >
-                ❯
-            </button>
-        </div>
-    );
+
+      {/*  Imágenes del carrusel */}
+      {slides.map((src, index) => (
+        <img
+          key={index}
+          src={src}
+          alt={`slide-${index}`}
+          className={`absolute w-full h-full object-contain transition-opacity duration-1000 ease-in-out ${
+            index === currentSlide ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+
+      {/*  Indicadores inferiores */}
+      <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`w-3 h-3 rounded-full transition-colors duration-500 ${
+              index === currentSlide ? "bg-white" : "bg-gray-600"
+            }`}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
 }
