@@ -49,12 +49,22 @@ function Header() {
           <div className="drawer">
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content fixed top-0 right-0 z-10">
-              <label
-                htmlFor="my-drawer"
-                className="btn btn-primary drawer-button size-16 rounded-full"
-              >
-                Fechas
-              </label>
+          <div className="drawer-content fixed top-6 right-2 z-10">
+          <label
+            htmlFor="my-drawer"
+            className="drawer-button size-16 rounded-full text-black font-semibold shadow-lg transition-transform duration-300 hover:scale-105"
+            style={{
+              backgroundColor: "#CA8A04", // dorado Cathaline
+              border: "2px solid #b77a03",
+              padding: "0.75rem 1.25rem",
+            
+            }}
+          >
+            Fechas
+          </label>
+</div>
+
+
             </div>
 
             <div className="drawer-side z-10">

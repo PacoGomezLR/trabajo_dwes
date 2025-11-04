@@ -17,15 +17,23 @@ export default function AutoCarousel() {
   }, [slides.length]);
 
   return (
-    <div className="relative w-full h-[600px] bg-white m-0 p-0 overflow-hidden">
+    <div className="relative w-full h-[600px] overflow-hidden">
+      {/* 🟡 Fondo difuminado que usa la imagen actual */}
+      <img
+        src={slides[currentSlide]}
+        alt="blurred-background"
+        className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60 transition-all duration-1000"
+      />
+
+      {/* 🎞️ Imagen principal (se ve entera) */}
       {slides.map((src, index) => (
         <img
           key={index}
           src={src}
           alt={`slide-${index}`}
-          className={`absolute inset-0 w-full h-full block m-0 p-0 transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
             index === currentSlide ? "opacity-100" : "opacity-0"
-          } object-cover object-center sm:object-[center_60%]`}
+          } object-contain`}
         />
       ))}
 
@@ -35,7 +43,7 @@ export default function AutoCarousel() {
           <div
             key={index}
             className={`w-3 h-3 rounded-full transition-colors duration-500 ${
-              index === currentSlide ? "bg-white" : "bg-gray-600"
+              index === currentSlide ? "bg-yellow-500" : "bg-gray-400"
             }`}
           />
         ))}
@@ -43,4 +51,3 @@ export default function AutoCarousel() {
     </div>
   );
 }
-

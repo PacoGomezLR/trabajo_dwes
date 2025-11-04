@@ -4,6 +4,8 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaSpotify } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import AutoCarousel from "@/components/AutoCarousel";
+import CountdownSingle from "@/components/CountdownSingle";
+
 
 export default function Home() {
   return (
@@ -84,6 +86,9 @@ export default function Home() {
           .
         </p>
       </section>
+
+      {/* CUENTA ATRÁS */}
+      <CountdownSingle />
 
       {/* REDES SOCIALES */}
       <section className="py-12 text-center bg-gray-900">
