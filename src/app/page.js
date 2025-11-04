@@ -1,72 +1,140 @@
-
 "use client";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSpotify } from "react-icons/fa";
-import AutoCarousel from "@/components/AutoCarousel";
 import { FaYoutube } from "react-icons/fa";
+import AutoCarousel from "@/components/AutoCarousel";
 
 export default function Home() {
   return (
-    <main className="bg-white text-black min-h-screen">
-
+    <main className="bg-white text-black min-h-screen font-[Inter]">
       {/* HERO / CARRUSEL */}
       <AutoCarousel />
 
       {/* SOBRE CATHALINE */}
       <section className="text-center py-16 px-6 max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-yellow-400 mb-4">
-          Bienvenido al universo de Cathaline
+        <h1
+          className="text-4xl md:text-5xl font-extrabold text-yellow-600 mb-6 tracking-tight"
+          style={{
+            textShadow:
+              "1px 1px 5px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 200, 0, 0.7)",
+          }}
+        >
+          Bienvenido al universo de{" "}
+          <span
+            className="text-gray-900"
+            style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)" }}
+          >
+            Cathaline
+          </span>
         </h1>
-        <p className="text-lg leading-relaxed text-black -300">
-          Cathaline es una banda de rock melódico que combina potencia, emoción y mensaje.
-          Su primer single, <strong>"Viento"</strong>, celebra la fuerza interior, el renacer
-          y la serenidad frente al destino. Inspirada en la historia real de Carlos Barroso,
-          la canción invita a mirar la vida con valor y esperanza.
+
+        <p className="text-lg md:text-xl leading-relaxed text-gray-800">
+          <span className="font-semibold text-gray-900">Cathaline</span> es una banda de rock melódico que combina{" "}
+          <span
+            className="text-yellow-500 font-bold"
+            style={{ textShadow: "0 0 10px rgba(200,200,0,0.9)" }}
+          >
+            potencia
+          </span>
+          ,{" "}
+          <span
+            className="text-yellow-500 font-bold"
+            style={{ textShadow: "0 0 10px rgba(200,200,0,0.9)" }}
+          >
+            emoción
+          </span>{" "}
+          y{" "}
+          <span
+            className="text-yellow-500 font-bold"
+            style={{ textShadow: "0 0 10px rgba(255,200,0,0.9)" }}
+          >
+            mensaje
+          </span>
+          . <br className="hidden md:block" />
+          Su primer single,{" "}
+          <strong
+            className="text-yellow-600 italic"
+            style={{ textShadow: "0 0 14px rgba(255,200,0,1)" }}
+          >
+            “Viento”
+          </strong>
+          , celebra la{" "}
+          <span className="text-gray-900 font-semibold">fuerza interior</span>,
+          el{" "}
+          <span className="text-gray-900 font-semibold">renacer</span> y la{" "}
+          <span className="text-gray-900 font-semibold">
+            serenidad frente al destino
+          </span>
+          . <br className="hidden md:block" />
+          Inspirada en la historia real de{" "}
+          <span
+            className="italic text-gray-900"
+            style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.4)" }}
+          >
+            Carlos Barroso
+          </span>
+          , la canción invita a{" "}
+          <span
+            className="text-yellow-600 font-bold"
+            style={{ textShadow: "0 0 15px rgba(255,200,0,1)" }}
+          >
+            mirar la vida con valor y esperanza
+          </span>
+          .
         </p>
-      </section>
-
- 
-
-
-      {/* INTEGRANTES */}
-      <section className="py-16 text-center">
-        <h2 className="text-3xl font-semibold text-yellow-400 mb-8">Integrantes</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-8">
-          {[
-            { name: "Kike Fuentes", role: "Voz", img: "/Kike.png" },
-            { name: "Paco Gómez", role: "Guitarra y teclados", img: "/Paco.png" },
-            { name: "Sergio Gómez", role: "Batería y percusión", img: "/Sergio.png" },
-            { name: "Rafa Pérez", role: "Bajo", img: "/Vilchez.png" },
-          ].map((member, i) => (
-            <div key={i} className="card bg-gray-800 shadow-xl">
-              <figure>
-                <img src={member.img} alt={member.name} className="object-cover h-72 w-full" />
-              </figure>
-              <div className="card-body items-center text-center">
-                <h3 className="card-title text-yellow-400">{member.name}</h3>
-                <p className="text-gray-300">{member.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* REDES SOCIALES */}
       <section className="py-12 text-center bg-gray-900">
-        <h2 className="text-3xl font-semibold text-yellow-400 mb-6">Síguenos</h2>
+        <h2 className="text-3xl font-semibold text-yellow-400 mb-6">
+          Síguenos
+        </h2>
         <div className="flex justify-center gap-6">
-          <a href="https://open.spotify.com/intl-es/artist/1L83AYYbmiaQT9yPcVaVOZ?si=dWFS4ZonQqqk4a8iCGyo1g" target="_blank" className="btn btn-circle btn-success"><FaSpotify size={22} color="white"/></a>
-          <a href="https://www.youtube.com/@CathalineOfficial" target="_blank" className="btn btn-circle bg-white"><FaYoutube size={25} color="red" /></a>
-          <a href="https://www.instagram.com/cathaline_oficial/" target="_blank" className="btn btn-circle btn-secondary"><FaSquareInstagram size={22} /></a>
-          <a href="https://www.facebook.com/profile.php?id=61578850313747" target="_blank" className="btn btn-circle btn-primary"><FaFacebookSquare size={22} /></a>
+          <a
+            href="https://open.spotify.com/intl-es/artist/1L83AYYbmiaQT9yPcVaVOZ?si=dWFS4ZonQqqk4a8iCGyo1g"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-circle btn-success"
+          >
+            <FaSpotify size={22} color="white" />
+          </a>
+
+          <a
+            href="https://www.youtube.com/@CathalineOfficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-circle bg-white"
+          >
+            <FaYoutube size={25} color="red" />
+          </a>
+
+          <a
+            href="https://www.instagram.com/cathaline_oficial/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-circle btn-secondary"
+          >
+            <FaSquareInstagram size={22} color="white" />
+          </a>
+
+          <a
+            href="https://www.facebook.com/profile.php?id=61578850313747"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-circle btn-primary"
+          >
+            <FaFacebookSquare size={22} color="white" />
+          </a>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer className="text-center py-6 bg-black border-t border-gray-800">
         <p className="text-gray-500">
-          © 2025 Cathaline. Todos los derechos reservados.  
+          © 2025{" "}
+          <span className="text-yellow-600 font-semibold">Cathaline</span>. Todos
+          los derechos reservados.
         </p>
       </footer>
     </main>
