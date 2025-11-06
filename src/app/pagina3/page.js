@@ -9,7 +9,7 @@ export default function KikeFuentesPage() {
         <img
           src="/Kike.png"
           alt="Kike Fuentes"
-          className="w-72 h-auto object-contain mx-auto rounded-xl shadow-2xl bg-black"
+          className="w-162 h-auto object-contain mx-auto rounded-xl shadow-2xl bg-black"
         />
         <h1 className="text-4xl font-bold text-yellow-500 mt-6">Kike Fuentes</h1>
       </section>

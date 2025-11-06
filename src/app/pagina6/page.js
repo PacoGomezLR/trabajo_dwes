@@ -9,7 +9,7 @@ export default function SergioGomezPage() {
         <img
           src="/Paco.png"
           alt="Paco Gomez"
-          className="w-72 h-auto object-contain mx-auto rounded-xl shadow-2xl bg-black"
+          className="w-162 h-auto object-contain mx-auto rounded-xl shadow-2xl bg-black"
         />
         <h1 className="text-4xl font-bold text-yellow-500 mt-6">Paco Gómez</h1>
       </section>

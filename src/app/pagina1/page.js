@@ -18,21 +18,24 @@ export default function Page1() {
         </p>
       </section>
 
-      {/* SPOTIFY PLAYER */}
-      <section className="mt-10 text-center w-full max-w-md px-10">
-        <h3 className="text-2xl font-semibold mb-4 text-yellow-600">
-          Escúchala en Spotify
-        </h3>
-        <iframe
-          style={{ borderRadius: "12px" }}
-          src="https://open.spotify.com/embed/track/3jlJSzEtTEK2PmpBzqliSw?utm_source=generator"
-          width="100%"
-          height="156"
-          frameBorder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-      </section>
+{/* SPOTIFY PLAYER */}
+<section className="mt-10 text-center w-full px-6">
+  <h3 className="text-2xl font-semibold mb-6 text-yellow-600">
+    Escúchala en Spotify
+  </h3>
+
+  <div className="flex justify-center">
+    <iframe
+      style={{ borderRadius: "18px" }}
+      src="https://open.spotify.com/embed/track/3jlJSzEtTEK2PmpBzqliSw?utm_source=generator"
+      className="w-full max-w-[560px] h-[280px] shadow-1xl"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    ></iframe>
+  </div>
+</section>
+
+
 
       {/* YOUTUBE VIDEO */}
       <section className="mt-16 text-center">
